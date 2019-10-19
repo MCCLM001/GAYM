@@ -59,7 +59,9 @@
      <Compile Include="Assets\Animation2D\Scripts\Animation2D.cs" />
      <Compile Include="Assets\Animation2D\Scripts\Animation2DManager.cs" />
      <Compile Include="Assets\Atk.cs" />
+     <Compile Include="Assets\BeginGaym.cs" />
      <Compile Include="Assets\enemattack.cs" />
+     <Compile Include="Assets\enemhealth.cs" />
      <Compile Include="Assets\enempew.cs" />
      <Compile Include="Assets\healthbar.cs" />
      <Compile Include="Assets\healthzzz.cs" />
@@ -67,6 +69,8 @@
      <Compile Include="Assets\pew.cs" />
      <Compile Include="Assets\Reset.cs" />
      <Compile Include="Assets\Score.cs" />
+     <Compile Include="Assets\ShotgunEquipo.cs" />
+     <Compile Include="Assets\StcokStats.cs" />
      <Compile Include="Assets\WALL.cs" />
      <None Include="Assets\Animation2D\readme.txt" />
      <None Include="Assets\Animation2D\change_log.txt" />

@@ -6,6 +6,7 @@ public class Atk : MonoBehaviour
 {
     public GameObject bullet;
     private float cooldown;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class Atk : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cooldown -= Time.deltaTime;
+        cooldown -= Time.deltaTime * StcokStats.reload;
         if (Input.GetKeyDown(KeyCode.Z))
         {
             if (cooldown <= 0)

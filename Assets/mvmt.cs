@@ -12,18 +12,32 @@ public class mvmt : MonoBehaviour
     private bool left = false;
     private bool up = false;
     private bool down = false;
+    private bool paused = false;
+    public GameObject pause;
     Vector2 velocity;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         velocity = new Vector2(0.0f, 0.0f);
+        Time.timeScale = 1f;
+        pause.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (paused == false && Input.GetKeyDown(KeyCode.Escape)){
+            Time.timeScale = 0;
+            pause.SetActive(true);
+            paused = true;
+        }
+        else if (paused == true && Input.GetKeyDown(KeyCode.Escape)){
+            Time.timeScale = 1f;
+            pause.SetActive(false);
+            paused = false;
+        }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             yvel = speed;

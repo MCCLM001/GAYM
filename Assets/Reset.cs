@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Reset : MonoBehaviour
 {
-    public int health;
-    public int enemhealth;
+    public float health;
+    public float enemhealth2;
     public GameObject player;
     public GameObject boss;
     public bool gameOverScreen;
@@ -24,13 +24,13 @@ public class Reset : MonoBehaviour
     void Update()
     {
         health = player.GetComponent<healthbar>().health;
-        enemhealth = boss.GetComponent<healthbar>().health;
-        if(health <= 0 && enemhealth >= 1)
+        enemhealth2 = boss.GetComponent<enemhealth>().health;
+        if(health <= 0 && enemhealth2 >= 1)
         {
             gameOverScreen = true;
             Time.timeScale = 0;
         }
-        if(enemhealth <= 0 && health >=1){
+        if(enemhealth2 <= 0 && health >=1){
             winScreen = true;
             Time.timeScale = 0;
         }

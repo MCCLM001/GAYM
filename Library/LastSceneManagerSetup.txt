@@ -1,5 +1,13 @@
 sceneSetups:
-- path: Assets/SampleScene.unity
+- path: Assets/MenuSceneGaym.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/Equip.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/PlaySceneGaym.unity
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0

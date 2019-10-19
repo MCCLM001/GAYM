@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class healthbar : MonoBehaviour
 {
-    public int health;
+    public float health;
     public int damage;
+    public int bigDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,15 @@ public class healthbar : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "ouch")
+            if (other.tag == "ouch")
         {
-            health -= damage;
-            Destroy(other.gameObject);
+                health -= damage * StcokStats.dmg;
+                Destroy(other.gameObject);
         }
+            if (other.tag == "bigouch"){
+                health -= bigDamage;
+                Destroy(other.gameObject);
+        }
+        
     }
 }

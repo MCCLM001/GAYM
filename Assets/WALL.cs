@@ -16,6 +16,10 @@ public class WALL : MonoBehaviour
         
     }
     void OnTriggerEnter2D(Collider2D other){
-        Destroy(other.gameObject);
+        if(other.gameObject.name == "Dakr FIrball (1)(Clone)")
+        {
+            Destroy(other.gameObject);
+        }
+        
     }
 }

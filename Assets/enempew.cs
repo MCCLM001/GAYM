@@ -9,22 +9,28 @@ public class enempew : MonoBehaviour
     public GameObject player;
     private Quaternion _lookrotation;
     private Vector3 _direction;
+    public Vector3 location;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        location = new Vector3(player.transform.position.x, 0.0f, player.transform.position.z );
+        transform.LookAt(location, Vector3.right);
+        //transform.Rotate(0.0f, 0.0f, -45.0f);
+
+        
     }
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        rb.velocity = new Vector2(0.0f, speed);
-        //_direction = (player.transform.position - transform.position).normalized;
-        //_lookrotation = Quaternion.LookRotation(_direction);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, _lookrotation,Time.deltaTime * 1);
+        float step = speed * Time.deltaTime;
+        transform.position += transform.forward * step;
+        
+        
         //transform.LookAt(player.transform);
-        //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 1);
+        //Debug.Log(transform.rotation);
     }
 
 }
