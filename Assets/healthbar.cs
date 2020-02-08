@@ -22,15 +22,18 @@ public class healthbar : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.name == "Dakr FIrball (1)(Clone)"){
             if (other.tag == "ouch")
         {
                 health -= damage * StcokStats.dmg;
                 Destroy(other.gameObject);
-        }
+            }
             if (other.tag == "bigouch"){
                 health -= bigDamage;
                 Destroy(other.gameObject);
+            }
         }
+            
         
     }
 }
